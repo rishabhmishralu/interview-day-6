@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js-6</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        h1,h2{
+            color: aliceblue;
+            text-align: center;
+        }
+        b{
+            color: brown;
+        }
+        pre,p{
+            color: aliceblue;
+            margin-left: 50px;
+        }
+        div{
+            color: aliceblue;
+        }
+        div,button{
+            margin-left: 30px;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>JS INTERVIEW QUESTIONS</h1>
+    <h2>DAY-6</h2>
+    <hr>
+    <p><b>1-Create a button , on click of which new Heading tag h1 should be added with text as "MERN stack" on the screen above button</b></p>
+    <div class="h"></div>
+    
+    <button class="button">Click here</button>
+    <pre>document.querySelector(".button").addEventListener('click',()=>{
+        document.querySelector(".h").innerHTML="<h1>MERN stack</h1>"
+})</pre>
+    <hr>
+    <p><b>2-Write code to get 1st H1 element from a webpage using DOM</b></p>
+    <pre>document.getElementsByTagName("h1")</pre>
+    <hr>
+    <p><b>3-Write code to implement timer clock using JS -- display HH:MM:SS -- the time should keep updating every second</b></p>
+     <div style="display: flex;"><div class="hr"></div>: <div class="min"></div>:<div class="sec"></div></div> 
+     <pre>setInterval(() => {
+        const date= new Date()
+          let hr=date.getHours();
+          let mi=date.getMinutes();
+          let sec=date.getSeconds();
+         document.querySelector(".hr").textContent=hr
+         document.querySelector(".min").textContent=mi
+         document.querySelector(".sec").textContent=sec
+     }, 1000);</pre>
+    <hr>
+    <p><b>4-Create an HTML page having content as Hello world and a button named Replace Text. When user will click on this button page content should be changed to "Welcome to Elevation academy"</b></p>
+    <p class="change">Hello world </p>
+    <button class="replace" onclick="replace()">Replace word</button>
+    <pre>function replace(){
+          document.querySelector(".change").textContent=`"Welcome to Elevation academy"`
+         }</pre>
+    <hr>
+    <p><b>5-Create an HTML page having content as Hello world and a button named "Hide Text." When user will click on this button hide the "Hello World" text </b> </p>
+    <p class="hide">"hello world"</p>
+    <button onclick="hide()">hide text</button>
+    <pre>
+        function hide(){
+            document.querySelector(".hide").style.display="none"
+        }</pre>
+    <hr>
+    <script src="./index.js"></script>
+</body>
+</html>
